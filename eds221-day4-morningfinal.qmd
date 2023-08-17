@@ -1,0 +1,87 @@
+---
+title: "eds221-day4morning"
+format: html
+editor: visual
+---
+
+Practice writing functions!
+
+```{r}
+double_value <- function(my_dollars){
+  print(2 * my_dollars)
+}
+double_value(4)
+```
+
+```{r}
+monthly_income <- c(42.5, 61, 34) 
+double_value(monthly_income)
+```
+
+Create a function that returns an awesome restaurant name given a cool animal and your favorite food
+
+```{r}
+name_restaurant <- function(animal, food){
+  print(paste0(animal,food))
+}
+
+name_restaurant("hawk", "pizza")
+```
+
+Given temperature in degrees fahreinheit, write a function that converts it to Celcius
+
+```{r}
+f_to_c <- function(temp_f){
+temp_C = (temp_f-32)*(5/9)
+print(temp_C)
+}
+f_to_c(temp_f = 100)
+
+```
+
+Create a function that given inputs of age and hometown, returns "I am \_\_ years old, and I'm from \_\_\_\_"
+
+```{r}
+exclamation <- function(age, hometown){
+  says = paste0("I am ", age, " years old, and I'm from ", hometown)
+  print(says)
+}
+exclamation(32, "Cornucopia")
+```
+
+# Functions with conditionals 
+
+```{r}
+calculate_animal_age <- function(species, age_human_years) {
+  if (species == "dog") {
+    age_human_years * 7 
+  } else if (species == "goat") {
+    age_human_years * 4.7 
+  } else{
+    print("Please enter dog or goat.")
+  }
+}
+```
+
+```{r}
+calculate_animal_age(species = "dog", age_human_years = 10)
+calculate_animal_age(species = "goat", age_human_years = 4 )
+calculate_animal_age(species = "whale", age_human_years = 10)
+```
+
+Write a function that, given temperature in kelvin, if a user selects "metric" to the scale then return degrees Celcius, or if they select "Imperial" then return degrees in Fahrenheit.
+
+```{r}
+kelv_convert<- function(scale, kelvin){
+  if(scale == "metric"){
+    k_to_c =  kelvin - 273.15
+    print(k_to_c)
+  } else if (scale == "imperial"){
+    k_to_f = ((kelvin - 273.15)*1.8) + 32
+    print(k_to_f)
+  } 
+}
+kelv_convert("metric", 44)
+
+```
+change
